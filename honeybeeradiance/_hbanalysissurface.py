@@ -1,9 +1,9 @@
 from abc import ABCMeta, abstractproperty
-import honeybee.utilcol as util
+import honeybeeradiance.utilcol as util
 from .hbobject import HBObject
 from .surfaceproperties import SurfaceProperties, SurfaceState
-import honeybee.surfacetype as surfacetype
-import honeybee.geometryoperation as go
+import honeybeeradiance.surfacetype as surfacetype
+import honeybeeradiance.geometryoperation as go
 from .surfacetype import Floor, Wall, Window, Ceiling
 from .radiance.radfile import RadFile
 from .radiance.material.glass import Glass

@@ -1,7 +1,7 @@
 """A collection of auxiliary funtions for working with files and directories."""
 import os
 import shutil
-import honeybee.config as config
+import honeybeeradiance.config as config
 
 import sys
 

@@ -1,24 +1,24 @@
 """Material utility."""
-import honeybee.radiance.material.bsdf
-import honeybee.radiance.material.glass
-import honeybee.radiance.material.glow
-import honeybee.radiance.material.light
-import honeybee.radiance.material.metal
-import honeybee.radiance.material.mirror
-import honeybee.radiance.material.plastic
-import honeybee.radiance.material.spotlight
-import honeybee.radiance.primitive as primitive
-import honeybee.radiance.radparser as radparser
+import honeybeeradiace.radiance.material.bsdf
+import honeybeeradiance.radiance.material.glass
+import honeybeeradiance.radiance.material.glow
+import honeybeeradiance.radiance.material.light
+import honeybeeradiance.radiance.material.metal
+import honeybeeradiance.radiance.material.mirror
+import honeybeeradiance.radiance.material.plastic
+import honeybeeradiance.radiance.material.spotlight
+import honeybeeradiance.radiance.primitive as primitive
+import honeybeeradiance.radiance.radparser as radparser
 
 material_mapper = {
-    'BSDF': honeybee.radiance.material.bsdf,
-    'glass': honeybee.radiance.material.glass,
-    'glow': honeybee.radiance.material.glow,
-    'light': honeybee.radiance.material.light,
-    'metal': honeybee.radiance.material.metal,
-    'mirror': honeybee.radiance.material.mirror,
-    'plastic': honeybee.radiance.material.plastic,
-    'spotlight': honeybee.radiance.material.spotlight
+    'BSDF': honeybeeradiance.radiance.material.bsdf,
+    'glass': honeybeeradiance.radiance.material.glass,
+    'glow': honeybeeradiance.radiance.material.glow,
+    'light': honeybeeradiance.radiance.material.light,
+    'metal': honeybeeradiance.radiance.material.metal,
+    'mirror': honeybeeradiance.radiance.material.mirror,
+    'plastic': honeybeeradiance.radiance.material.plastic,
+    'spotlight': honeybeeradiance.radiance.material.spotlight
 }
 
 

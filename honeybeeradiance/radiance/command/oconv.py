@@ -25,8 +25,8 @@ class Oconv(RadianceCommand):
 
     Usage:
 
-        from honeybee.radiance.parameters.oconv import OconvParameters
-        from honeybee.radiance.command.oconv import Oconv
+        from honeybeeradiance.radiance.parameters.oconv import OconvParameters
+        from honeybeeradiance.radiance.command.oconv import Oconv
 
         # generate oconv parameters
         rcp = OconvParameters()

@@ -4,8 +4,8 @@ Surface Properties.
 A class that contains both radiance and energyplus properties which can be applied to a
 surface or a list of honeybee surfaces.
 """
-import honeybee.surfacetype as surfacetype
-import honeybee.utilcol as util
+import honeybeeradiance.surfacetype as surfacetype
+import honeybeeradiance.utilcol as util
 from .radiance.properties import RadianceProperties
 from .radiance.radfile import RadFile
 

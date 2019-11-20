@@ -1,11 +1,11 @@
 from ._hbanalysissurface import HBAnalysisSurface
 from .surfaceproperties import SurfaceProperties, SurfaceState
-import honeybee.utilcol as util
-import honeybee
+import honeybeeradiance.utilcol as util
+import honeybeeradiance
 try:
     import plus
 except ImportError as e:
-    if honeybee.isplus:
+    if honeybeeradiance.isplus:
         raise ImportError(e)
 
 import sys
@@ -32,8 +32,8 @@ class HBFenSurface(HBAnalysisSurface):
 
     Usage:
 
-        from honeybee.hbsurface import HBSurface
-        from honeybee.hbfensurface import HBFenSurface
+        from honeybeeradiance.hbsurface import HBSurface
+        from honeybeeradiance.hbfensurface import HBFenSurface
 
         # create a surface
         pts = [(0, 0, 0), (10, 0, 0), (0, 0, 10)]
@@ -104,7 +104,7 @@ class HBFenSurface(HBAnalysisSurface):
     def from_geometry(cls, name, geometry, is_name_set_by_user=False,
                       rad_properties=None, ep_properties=None, states=None, group=False):
         """Create a honeybee fenestration surface from Grasshopper geometry."""
-        assert honeybee.isplus, \
+        assert honeybeeradiance.isplus, \
             '"fromGeometries" method can only be used in [+] libraries.'
 
         name = name or util.random_name()
@@ -184,7 +184,7 @@ class HBFenSurface(HBAnalysisSurface):
     @property
     def geometry(self):
         """Return geometry."""
-        assert honeybee.isplus, \
+        assert honeybeeradiance.isplus, \
             '"geometry" property can only be used in [+] libraries.'
         if self.is_created_from_geometry:
             return self._geometry
@@ -194,17 +194,17 @@ class HBFenSurface(HBAnalysisSurface):
     @geometry.setter
     def geometry(self, geo):
         """Set geometry."""
-        assert honeybee.isplus, \
+        assert honeybeeradiance.isplus, \
             '"geometry" property can only be used in [+] libraries.'
 
-        assert honeybee.isplus, \
+        assert honeybeeradiance.isplus, \
             '"profile" property can only be used in [+] libraries.'
         self._geometry = geo
 
     @property
     def profile(self):
         """Get profile curve of this surface."""
-        assert honeybee.isplus, \
+        assert honeybeeradiance.isplus, \
             '"profile" property can only be used in [+] libraries.'
         return plus.polygon(
             tuple(plus.xyz_to_geometrical_points(self.absolute_points))
