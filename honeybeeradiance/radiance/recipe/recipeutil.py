@@ -27,7 +27,7 @@ def input_srfs_to_rad_files(in_srfs):
             fen.append(srf)
         elif srf.isHBSurface:
             opaque.append(srf)
-            fen.extend(srf.children_surfaces)
+            # fen.extend(srf.children_surfaces)  # I disabled this. Not sure why this is ever needed
         else:
             raise TypeError('{} is not an analysis surface.'.format(srf))
 
