@@ -701,7 +701,8 @@ def coeff_matrix_commands(output_name, receiver, rad_files, sender, points_file=
     sender = sender or '-'
     rad_files = rad_files or ()
     number_of_points = number_of_points or 0
-    rfluxmtx = Rfluxmtx()
+    rfluxmtx = Rfluxmtx(num_processors = 8)
+
 
     if sender == '-':
         assert points_file, \
