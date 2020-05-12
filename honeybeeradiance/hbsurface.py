@@ -15,6 +15,9 @@ if (sys.version_info >= (3, 0)):
     basestring = str
 
 
+import math
+
+
 class HBSurface(HBAnalysisSurface):
     """Base class for Honeybee surface.
 
@@ -293,3 +296,24 @@ class HBSurface(HBAnalysisSurface):
 
         # set up parent object if it's not set
         fenestration_surface._parent = self
+
+
+    def add_fenestration_surface_by_ratio(self, name, ratio):
+        assert isinstance(ratio, (float)), Exception("ratio should be <float>")
+        assert 0 < ratio < 1, Exception("ratio should be between 0 and 1")
+        for pts in self.points:
+            assert len(pts) == 4, 'Length of points should be 4.'
+            pt0 = Point3(*pts[0])
+            pt1 = Point3(*pts[1])
+            pt3 = Point3(*pts[-1])
+            srf_width = pt0.distance(pt1)
+            srf_height = pt0.distance(pt3)
+
+            glazing_width = srf_width * math.sqrt(ratio)
+            glazing_height = srf_height * math.sqrt(ratio)
+            sill_height =  (srf_height - glazing_height) / 2
+
+
+            self.add_fenestration_surface_by_size(name, glazing_width, glazing_height, sill_height=sill_height)
+
+
