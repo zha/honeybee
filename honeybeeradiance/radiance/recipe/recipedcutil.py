@@ -829,7 +829,7 @@ def sun_matrix_calculation(output, dc_matrix=None, sky_matrix=None):
 
 
 def sun_coeff_matrix_commands(output, point_file, scene_files, analemma, sunlist,
-                              irradiance_calc):
+                              irradiance_calc, project_folder):
     """Return commands for calculating analemma coefficient.
 
     Args:
@@ -847,7 +847,7 @@ def sun_coeff_matrix_commands(output, point_file, scene_files, analemma, sunlist
     """
     octree = Oconv()
     octree.scene_files = list(scene_files) + [analemma]
-    octree.output_file = 'analemma.oct'
+    octree.output_file = os.path.join(project_folder, 'analemma.oct')
 
     # Creating sun coefficients
     rctb_param = get_radiance_parameters_grid_based(0, 1).smtx

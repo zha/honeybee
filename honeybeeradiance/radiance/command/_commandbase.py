@@ -229,14 +229,14 @@ class RadianceCommand(object):
         self.on_execution()
 
         if os.name == 'nt':
-            os.environ['PATH'] += ';%s' % self.normspace(config.radbin_path)
+            # os.environ['PATH'] += ';%s' % self.normspace(config.radbin_path)
             os.environ['RAYPATH'] += ';%s' % self.normspace(config.radlib_path)
         print('sdfsd', self.to_rad_string())
         p = subprocess.Popen(self.to_rad_string(), shell=True,
                              stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
 
-        for line in p.stdout.readlines():
-            print(line)
+        # for line in p.stdout.readlines():
+        #     print(line)
         p.wait()
 
         try:

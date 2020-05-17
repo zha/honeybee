@@ -91,7 +91,8 @@ class Rcontrib(RadianceCommand):
         """Return full command as a string."""
         if self.output_file.to_rad_string().strip():
             rad_string = "%s %s %s < %s > %s" % (
-                self.normspace(os.path.join(self.radbin_path, "rcontrib")),
+                # self.normspace(os.path.join(self.radbin_path, "rcontrib")),
+                self.normspace("rcontrib"),  # Shengbo: for linux integration
                 self.rcontrib_parameters.to_rad_string(),
                 self.normspace(self.octree_file.to_rad_string()),
                 self.normspace(self.points_file.to_rad_string()),
@@ -105,7 +106,8 @@ class Rcontrib(RadianceCommand):
             self.rcontrib_parameters.output_filename_format = None
 
             rad_string = "%s %s < %s -o %s -M %s %s" % (
-                self.normspace(os.path.join(self.radbin_path, "rcontrib")),
+                # self.normspace(os.path.join(self.radbin_path, "rcontrib")),
+                self.normspace( "rcontrib"),  # Shengbo: for linux integration
                 self.rcontrib_parameters.to_rad_string(),
                 self.normspace(self.points_file.to_rad_string()),
                 out, mod,
@@ -113,7 +115,8 @@ class Rcontrib(RadianceCommand):
             )
         else:
             rad_string = "%s %s %s < %s" % (
-                self.normspace(os.path.join(self.radbin_path, "rcontrib")),
+                # self.normspace(os.path.join(self.radbin_path, "rcontrib")),
+                self.normspace("rcontrib"),   # Shengbo: for linux integration
                 self.rcontrib_parameters.to_rad_string(),
                 self.normspace(self.octree_file.to_rad_string()),
                 self.normspace(self.points_file.to_rad_string())

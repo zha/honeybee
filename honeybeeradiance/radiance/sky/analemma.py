@@ -263,6 +263,7 @@ class AnalemmaReversed(Analemma):
         fp = os.path.join(working_dir, self.analemma_file)  # analemma file (geo and mat)
         sfp = os.path.join(working_dir, self.sunlist_file)  # modifier list
 
+
         with open(fp, writemode) as outf, open(sfp, writemode) as outm:
             for hoy, vector in zip(self.sun_up_hours, self.sun_vectors):
                 # use minute of the year to name sun positions

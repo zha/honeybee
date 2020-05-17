@@ -93,7 +93,8 @@ class Gendaymtx(RadianceCommand):
         """Return full command as a string."""
         # generate the name from self.wea_file
         rad_string = "%s %s %s > %s" % (
-            self.normspace(os.path.join(self.radbin_path, 'gendaymtx')),
+            # self.normspace(os.path.join(self.radbin_path, 'gendaymtx')),
+            self.normspace( 'gendaymtx'),  # Shengbo: for linux integration
             self.gendaymtx_parameters.to_rad_string(),
             self.normspace(self.wea_file),
             self.normspace(self.output_file)

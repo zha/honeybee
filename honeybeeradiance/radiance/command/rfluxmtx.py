@@ -277,7 +277,9 @@ class Rfluxmtx(RadianceCommand):
 
         # Creating the string this way because it might change again in the
         # future.
-        rad_string = ["%s " % self.normspace(os.path.join(self.radbin_path, 'rfluxmtx'))]
+        # rad_string = ["%s " % self.normspace(os.path.join(self.radbin_path, 'rfluxmtx'))]
+        rad_string = ["rfluxmtx "]  # Shengbo: Modified to work with Linux
+
         rad_string.append(add_to_str(output_data_format))
         rad_string.append(add_to_str(verbose))
         rad_string.append(add_to_str(number_of_processors))

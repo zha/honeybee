@@ -103,7 +103,8 @@ class Oconv(RadianceCommand):
     def to_rad_string(self, relative_path=False):
         """Return full command as a string."""
         rad_string = "%s %s %s > %s" % (
-            self.normspace(os.path.join(self.radbin_path, "oconv")),
+            # self.normspace(os.path.join(self.radbin_path, "oconv")),
+            self.normspace("oconv"),  # Shengbo: for linux integration
             self.oconv_parameters.to_rad_string(),
             " ".join([self.normspace(f) for f in self.scene_files]),
             self.normspace(self.output_file.to_rad_string())
