@@ -227,7 +227,8 @@ class DaylightCoeffGridBased(GenericGridBased):
         """Add echo in front of comments in batch file comments."""
         cmd = [c for c in self._commands if c]
         cmd = ['echo ' + c if c[:2] == '::' else c for c in cmd]
-        return ['@echo off'] + cmd
+        # return ['@echo off'] + cmd
+        return cmd
 
     def _add_commands(self, skycommands, commands):
         """Check if the commands should be added to self._commands."""
