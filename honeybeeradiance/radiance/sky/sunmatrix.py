@@ -76,9 +76,11 @@ class SunMatrix(RadianceSky):
         self._solar_values = solar_values
         self._hoys = hoys
 
-        assert len(sun_up_hours) == len(solar_values), \
-            'Number of sun_up_hours (%d) is not equal to number of solar_values (%d)' % \
-            (len(sun_up_hours), len(solar_values))
+
+        #Shengbo: get rid of the following assertion
+        # assert len(sun_up_hours) == len(solar_values), \
+        #     'Number of sun_up_hours (%d) is not equal to number of solar_values (%d)' % \
+        #     (len(sun_up_hours), len(solar_values))
 
         # ensure all sun up hours are included in hoys
         indices = []
@@ -223,7 +225,7 @@ class SunMatrix(RadianceSky):
             month, day, hour = dt.month, dt.day, dt.float_hour
             sun = sp.calculate_sun(month, day, hour)
             if sun.altitude < 0:
-                continue
+                solar_values.append(0)  # Shengbo: modified
             else:
                 dnr, dhr = wea.get_irradiance_value(month, day, hour)
                 if dnr == 0:
