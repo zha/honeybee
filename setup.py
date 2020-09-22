@@ -20,7 +20,7 @@ setuptools.setup(
     url="https://github.com/ladybug-tools/honeybee",
     packages=setuptools.find_packages(),
     include_package_data=True,
-    package_data = {'honeybeeradiance':'config.json'},
+    package_data = {'honeybeeradiance':['config.json']},
     install_requires=requirements,
     classifiers=[
         "Programming Language :: Python :: 2.7",
