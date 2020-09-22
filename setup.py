@@ -10,8 +10,8 @@ with open('requirements.txt') as f:
 
 setuptools.setup(
     name="lbt-honeybee",
-    use_scm_version = True,
-    setup_requires=['setuptools_scm'],
+    # use_scm_version = True,
+    # setup_requires=['setuptools_scm'],
     author="Ladybug Tools",
     author_email="info@ladybug.tools",
     description="Honeybee is a Python library to create, run and visualize the results of daylight (RADIANCE) and energy analysis (EnergyPlus/OpenStudio). The current version supports only Radiance integration.",
